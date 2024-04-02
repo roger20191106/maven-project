@@ -7,7 +7,7 @@ pipeline {
         stage ('Build'){
             steps{
                 echo 'Start building ...'
-                bat(/mvn clean package/)
+                cmd.exe /C "D:\Tools\apache-maven-3.9.6\bin\mvn.cmd clean package && exit %%ERRORLEVEL%%"
                 echo 'Builded!'
             }
 			post{
