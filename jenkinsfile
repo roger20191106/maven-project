@@ -10,8 +10,8 @@ pipeline {
             }
 			post{
 				sucess{
-					echo "Star to archive..."
-					archiveArtifacts artifacts: "**/target/*.war"
+					echo 'Star to archive...'
+					archiveArtifacts artifacts: '**/target/*.war'
 				}
 			}
         }
