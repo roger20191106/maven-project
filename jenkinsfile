@@ -16,7 +16,7 @@ pipeline {
                 echo 'Builded!'
             }
          	post{
-				sucess{
+				success{
 					echo "Star to archive..."
 					archiveArtifacts artifacts: "**/target/*.war"
 				}
