@@ -15,6 +15,13 @@ pipeline {
                 bat 'mvn clean package'
                 echo 'Builded!'
             }
+         	ost{
+				sucess{
+					echo "Star to archive..."
+					archiveArtifacts artifacts: "**/target/*.war"
+				}
+			}
+
 		}
         stage('Deploy'){
             steps{
