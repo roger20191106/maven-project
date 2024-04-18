@@ -15,14 +15,7 @@ pipeline {
                 bat 'mvn clean package'
                 echo 'Builded!'
             }
-/*			post{
-*				success{
-*					echo 'Star to archive...'
-*					archiveArtifacts artifacts: '**/target/*.war'
-				}
-*/
-			}
-        
+		}
         stage('Deploy'){
             steps{
                 echo 'Start Deploying ...'
