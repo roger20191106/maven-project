@@ -4,18 +4,28 @@ pipeline {
         maven 'local maven'
     }
     stages{
+        stage('Init'){
+            steps{
+                echo "Init ...."
+            }
+        }
         stage ('Build'){
             steps{
                 echo 'Start building ...'
                 bat 'mvn clean package'
                 echo 'Builded!'
             }
-			post{
-				success{
-					echo 'Star to archive...'
-					archiveArtifacts artifacts: '**/target/*.war'
-				}
+//			post{
+//				success{
+//					echo 'Star to archive...'
+//					archiveArtifacts artifacts: '**/target/*.war'
+//				}
 			}
+        }
+        stage('Deploy'){
+            steps{
+                echo 'Start Deploying ...'
+            }
         }
     } 
 }
